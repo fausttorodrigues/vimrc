@@ -4,22 +4,24 @@ filetype off                  " required
 
 " ============= Colorindo o VIM =======================
 
-let g:solarized_termcolors=256
-colorscheme solarized
-set background=dark
+colorscheme monokai
 set number
-
-" =====================================================
+set ts=4
+set autoindent
+set expandtab
+set shiftwidth=4
+set cursorline
+set showmatch
+let python_highlight_all = 1
 
 " ============= Ligando Sintax ========================
 
 if &t_Co > 1
 	syntax enable
-	
 endif
 
 " =====================================================
-
+autocmd FileType * set noexpandtab
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -41,6 +43,8 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Clean"     : "✔︎",
     \ "Unknown"   : "?"
     \ }
+
+let g:nerdtree_tabs_open_on_console_startup=1
 " =====================================================
 
 
@@ -49,10 +53,11 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-
+Plugin 'jistr/vim-nerdtree-tabs'
 
 Plugin 'flazz/vim-colorschemes'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'itchyny/lightline.vim'
 
 
 " All of your Plugins must be added before the following line
